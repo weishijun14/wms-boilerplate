@@ -1,48 +1,48 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // eslint-disable-line import/no-extraneous-dependencies
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // eslint-disable-line import/no-extraneous-dependencies
 
-const devMode = process.env.NODE_ENV !== 'production';
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  entry: './app.js',
+  entry: "./app.js",
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-    }),
+      template: "./index.html"
+    })
   ],
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
+        loader: "awesome-typescript-loader"
       },
       {
-        enforce: 'pre',
+        enforce: "pre",
         test: /\.js$/,
-        loader: 'source-map-loader',
+        loader: "source-map-loader"
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             cacheDirectory: true,
-            presets: ['@babel/preset-env'],
-          },
-        },
+            presets: ["@babel/preset-env"]
+          }
+        }
       },
       {
         test: /\.css$/,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
-      },
-    ],
-  },
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
+      }
+    ]
+  }
 };
