@@ -7,6 +7,7 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
+    historyApiFallback: true,
     contentBase: "./dist", // publicPath 了解
     hot: true
   },
@@ -15,6 +16,7 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin()
   ],
   output: {
+    publicPath: "/",
     filename: "index.[hash].js",
     path: path.resolve(__dirname, "dist")
   }

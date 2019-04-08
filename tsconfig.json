@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-        "outDir": "./",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "es5",
-        "jsx": "react"
-    },
-    "include": [
-        "./**/*"
-    ]
+  "compilerOptions": {
+    "outDir": "./",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // eslint-disab
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  entry: "./app.js",
+  entry: "./index.js",
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html"
@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader"
+        loader: "babel-loader"
       },
       {
         enforce: "pre",

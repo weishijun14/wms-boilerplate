@@ -18,30 +18,27 @@ module.exports = {
     jest: true,
     jasmine: true
   },
-  // settings: {
-  //   polyfills: ['fetch', 'promises', 'url'],
-  //   "import/resolver": {
-  //     node: {
-  //       "paths": ["./"],
-  //       "extensions": [
-  //         ".js",
-  //         ".jsx",
-  //         ".ts",
-  //         ".tsx"
-  //       ]
-  //     },
-  //   },
-  //   "import/parsers": {
-  //     "typescript-eslint-parser": [ ".ts", ".tsx" ]
-  //   }
-  // },
+  settings: {
+    polyfills: ["fetch", "promises", "url"],
+    "import/resolver": {
+      node: {
+        paths: ["./"],
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+    // "import/parsers": {
+    //   "typescript-eslint-parser": [ ".ts", ".tsx" ]
+    // }
+  },
   globals: {
     APP_TYPE: true
   },
   rules: {
-    // 'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
-    // 'import/no-unresolved': 0
-    // 'import/no-unresolved': [2, { ignore: ['^@/'] }],
-    // 'import/no-extraneous-dependencies': [2, { optionalDependencies: true }],
+    "react/jsx-filename-extension": [
+      1,
+      { extensions: [".js", ".ts", ".jsx", "tsx"] }
+    ],
+    "import/no-unresolved": [2, { ignore: ["^@/"] }],
+    "import/no-extraneous-dependencies": [2, { optionalDependencies: true }]
   }
 };
